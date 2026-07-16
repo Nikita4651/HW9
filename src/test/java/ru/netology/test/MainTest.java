@@ -12,6 +12,7 @@ import ru.netology.data.SQLHelper;
 import static com.codeborne.selenide.Selenide.open;
 
 import static ru.netology.data.SQLHelper.cleanAuthCodes;
+import static ru.netology.data.SQLHelper.cleanDatabase;
 
 class MainTest {
     LoginPage loginPage;
@@ -19,17 +20,21 @@ class MainTest {
 
     @AfterAll
     static void tearDownAll() {
-        CleanDatabase();
+
+        cleanDatabase();
     }
+
+
 
     @AfterEach
     void tearDown() {
+
         cleanAuthCodes();
     }
 
     @BeforeEach
     void setUp() {
-        loginPage = open("http://localhost:9999", loginPage.class);
+        loginPage = open("http://localhost:9999", LoginPage.class);
 
     }
 
@@ -44,7 +49,7 @@ class MainTest {
     @Test
     @DisplayName("Should get error notification if user is not exist in base")
     void shouldGetErrorNotificationIfLoginWithRandom() {
-        var authinfo = DataHelper.generateRandomUser();
+        var authInfo = DataHelper.generateRandomUser();
         loginPage.login(authInfo);
         loginPage.verifyErrorNotification("Ошибка! неверно указан логин или пароль");
 

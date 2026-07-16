@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Value;
 
+
+
 import java.util.Locale;
 
 public class DataHelper {
@@ -16,8 +18,11 @@ public class DataHelper {
 
     }
 
+
     public static AuthInfo getAuthInfoWithTestData() {
-        return new AuthInfo("vasya", "qwerty123");
+         return new AuthInfo("vasya", "qwerty123");
+
+
     }
 
     private static String generateRandomLogin() {
@@ -40,12 +45,16 @@ public class DataHelper {
     public static class AuthInfo {
         String login;
         String password;
-    }
+   }
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
     public static class VerificationCode {
         String code;
+
+
     }
+
+
 }
