@@ -51,7 +51,7 @@ class MainTest {
     void shouldGetErrorNotificationIfLoginWithRandom() {
         var authInfo = DataHelper.generateRandomUser();
         loginPage.login(authInfo);
-        loginPage.verifyErrorNotification("Ошибка! неверно указан логин или пароль");
+        loginPage.verifyErrorNotification("Ошибка! \nНеверно указан логин или пароль");
 
     }
 
@@ -61,6 +61,6 @@ class MainTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! Неверно указали код! Попробуйте еще раз");
+        verificationPage.verifyErrorNotification("Ошибка! \nНеверно указали код! Попробуйте еще раз");
     }
 }
