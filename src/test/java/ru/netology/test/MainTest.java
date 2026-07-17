@@ -24,8 +24,6 @@ class MainTest {
         cleanDatabase();
     }
 
-
-
     @AfterEach
     void tearDown() {
 

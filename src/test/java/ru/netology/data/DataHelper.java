@@ -18,10 +18,8 @@ public class DataHelper {
 
     }
 
-
     public static AuthInfo getAuthInfoWithTestData() {
          return new AuthInfo("vasya", "qwerty123");
-
 
     }
 
